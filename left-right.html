@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+<body>
+
+<p><button onclick="right()">move right</button>      <button onclick="lef()">move left</button></p> 
+<p><button onclick="avb()">move down</button>       <button onclick="up()">move up</button></p>
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<script>
+var left=0;
+var down=0;
+function avb()
+{
+  var elem1 = document.getElementById("animate"); 
+   if(down!=350)
+   down+=50;
+   elem1.style.top= down + "px";
+   elem1.style.left = left +"px";
+}
+function lef()
+{
+  var elem2 = document.getElementById("animate"); 
+   if(left!=0)
+   left-=50;
+   elem2.style.left= left + "px";
+   elem2.style.top = down +"px";
+}
+function right()
+{
+   var elem3 = document.getElementById("animate");  
+      if(left!=350)  
+      left+=50;
+      elem3.style.left = left + "px"; 
+      elem3.style.top = down +"px"; 
+}
+function up()
+{
+  var elem4 = document.getElementById("animate");
+   if(down!=0)
+   down-=50;
+   elem4.style.top= down + "px";
+   elem4.style.left = left +"px";
+}
+
+</script>
+
+</body>
+</html>
+
