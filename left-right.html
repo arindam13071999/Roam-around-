@@ -13,13 +13,61 @@
   position: absolute;
   background-color: red;
 }
+#f00{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;
+  }
+#f5050{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f100100{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f150150{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f200200{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f250250{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f300300{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
+#f350350{
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: yellow;  
+}
 </style>
 <body>
 
 <p><button onclick="right()">move right</button>      <button onclick="lef()">move left</button></p> 
 <p><button onclick="avb()">move down</button>       <button onclick="up()">move up</button></p>
 <div id ="container">
-  <div id ="animate"></div>
+  <div id ="f5050"></div><div id ="f100100"></div><div id ="f150150"></div><div id ="f200200"></div><div id ="f250250"></div><div id ="f300300"></div><div id ="f350350"></div><div id ="f00"></div><div id ="animate"></div>
 </div>
 
 <script>
@@ -27,39 +75,70 @@ var left=0;
 var down=0;
 function avb()
 {
+  var elem8 = document.getElementById("f00");
+  elem8.style.backgroundColor="orange";
   var elem1 = document.getElementById("animate"); 
    if(down!=350)
    down+=50;
    elem1.style.top= down + "px";
    elem1.style.left = left +"px";
+   str="";
+   str=str+"f"+left+down;
+ var elem = document.getElementById(str);   
+   elem.style.backgroundColor="orange";
+    elem.style.left= left + "px";
+   elem.style.top = down +"px";
 }
 function lef()
 {
+  var elem8 = document.getElementById("f00");
+  elem8.style.backgroundColor="orange";
   var elem2 = document.getElementById("animate"); 
    if(left!=0)
    left-=50;
    elem2.style.left= left + "px";
    elem2.style.top = down +"px";
+  var str1="";
+   str1=str1+"f"+left+down;
+ var elem5 = document.getElementById(str1);   
+   elem5.style.backgroundColor="orange";
+    elem5.style.left= left + "px";
+   elem5.style.top = down +"px";  
 }
 function right()
 {
+  var elem8 = document.getElementById("f00");
+  elem8.style.backgroundColor="orange";
    var elem3 = document.getElementById("animate");  
       if(left!=350)  
       left+=50;
       elem3.style.left = left + "px"; 
       elem3.style.top = down +"px"; 
+   var str2="";
+   str2=str2+"f"+left+down;
+ var elem6 = document.getElementById(str2);   
+   elem6.style.backgroundColor="orange";
+    elem6.style.left= left + "px";
+   elem6.style.top = down +"px";     
 }
 function up()
 {
+  var elem8 = document.getElementById("f00");
+  elem8.style.backgroundColor="orange";
   var elem4 = document.getElementById("animate");
    if(down!=0)
    down-=50;
    elem4.style.top= down + "px";
    elem4.style.left = left +"px";
+   var str3="";
+   str3=str3+"f"+left+down;
+ var elem7 = document.getElementById(str3);   
+   elem7.style.backgroundColor="orange";
+    elem7.style.left= left + "px";
+   elem7.style.top = down +"px";  
 }
 
 </script>
 
 </body>
 </html>
-
