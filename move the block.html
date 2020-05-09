@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p><button onclick="right()">move right</button>      <button onclick="lef()">move left</button></p> 
+<p><button onclick="avb()">move down</button>       <button onclick="up()">move up</button></p>
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;background-color:yellow"></canvas>
+
+<script>
+var left=0;
+var down=0;
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+ctx.fillStyle="red";
+ctx.fillRect(0, 0, 50, 50);
+ctx.fillStyle="brown";
+ctx.fillRect(50,50,50,50);
+function lef()
+{
+ if(left!=0)
+ {
+  ctx.clearRect(left,down,50,50);
+  left-=50;
+  ctx.fillStyle="red";
+  ctx.fillRect(left, down, 50, 50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left+50,down,50,50);
+ }
+}
+function avb()
+{
+ if(down!=350)
+ {
+  ctx.clearRect(left,down,50,50);
+  down+=50;
+  ctx.fillStyle="red";
+  ctx.fillRect(left, down, 50, 50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left,down-50,50,50);
+ }
+}
+function up()
+{
+ if(down!=0)
+ {
+  ctx.clearRect(left,down,50,50);
+  down-=50;
+  ctx.fillStyle="red";
+  ctx.fillRect(left, down, 50, 50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left,down+50,50,50);
+ }
+}
+function right()
+{
+ if(left!=350)
+ {
+  ctx.clearRect(left,down,50,50);
+  left+=50;
+  ctx.fillStyle="red";
+  ctx.fillRect(left, down, 50, 50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left-50,down,50,50);
+ }
+}
+</script>
+
+</body>
+</html>
