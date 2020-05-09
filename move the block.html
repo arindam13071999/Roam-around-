@@ -8,15 +8,29 @@
 <script>
 var left=0;
 var down=0;
+var bleft=50;
+var bdown=50;
 var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.fillStyle="red";
 ctx.fillRect(0, 0, 50, 50);
 ctx.fillStyle="brown";
-ctx.fillRect(50,50,50,50);
+ctx.fillRect(bleft,bdown,50,50);
 function lef()
 {
- if(left!=0)
+ var k=0;
+ if(bleft+50==left && bleft!=0 && bdown==down)
+ {
+  left-=50;bleft-=50;
+  ctx.fillStyle="red"; 
+  ctx.fillRect(left,down,50,50);
+  ctx.fillStyle="brown";
+  ctx.fillRect(bleft,bdown,50,50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left+50,down,50,50);
+  k++;
+ }
+ if(left!=0 && k==0 && bdown!=down)
  {
   ctx.clearRect(left,down,50,50);
   left-=50;
@@ -28,7 +42,19 @@ function lef()
 }
 function avb()
 {
- if(down!=350)
+ var k=0;
+ if(down+50==bdown && bdown!=350 && left==bleft)
+ {
+  down+=50;bdown+=50;
+  ctx.fillStyle="red"; 
+  ctx.fillRect(left,down,50,50);
+  ctx.fillStyle="brown";
+  ctx.fillRect(bleft,bdown,50,50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left,down-50,50,50);
+  k++;
+ }
+ if(down!=350 && k==0  && bleft!=left)
  {
   ctx.clearRect(left,down,50,50);
   down+=50;
@@ -40,7 +66,19 @@ function avb()
 }
 function up()
 {
- if(down!=0)
+ var k=0;
+ if(bdown+50==down && bdown!=0 && left==bleft)
+ {
+  bdown-=50;down-=50;
+  ctx.fillStyle="red"; 
+  ctx.fillRect(left,down,50,50);
+  ctx.fillStyle="brown";
+  ctx.fillRect(bleft,bdown,50,50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left,down+50,50,50);
+  k++;
+ }
+ if(down!=0 && k==0 && left!=bleft)
  {
   ctx.clearRect(left,down,50,50);
   down-=50;
@@ -52,7 +90,19 @@ function up()
 }
 function right()
 {
- if(left!=350)
+ var k=0;
+ if(left+50==bleft && bleft!=350 && bdown==down)
+ {
+  left+=50;bleft+=50;
+  ctx.fillStyle="red"; 
+  ctx.fillRect(left,down,50,50);
+  ctx.fillStyle="brown";
+  ctx.fillRect(bleft,bdown,50,50);
+  ctx.fillStyle="yellow";
+  ctx.fillRect(left-50,down,50,50);
+  k++;
+ }
+ if(left!=350 && k==0 &&  bdown!=down)
  {
   ctx.clearRect(left,down,50,50);
   left+=50;
